@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1BB6C1</color>
+    <color name="colorPrimaryDark">#1BB6C1</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#222</color>
+    <color name="text_thirdly">#999</color>
+
+    <!-- 通用调色板 -->
+    <color name="white">#ffffff</color>
+    <color name="gray">#d1d1d1</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#53000000</color>
+
+
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+
+    <color name="bg_common_dialog_light">#b4000000</color>
+</resources>

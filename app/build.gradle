@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.demo.ming.webview"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //更多的版本设置
+    productFlavors {
+        jiaotou {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ecinc.emoa.jt"]
+            applicationId "com.ecinc.emoa.jt"
+            resValue "string", "app_name", "交投移动办公"
+            resValue "bool", "isrRank", 'true'
+            manifestPlaceholders = [ENVIRONMENT: "jiaotou",
+                                    app_icon   : "@mipmap/ic_logo_jt",
+                                    app_name   : "交投移动办公",
+                                    APP_PROVIDER   : "com.ecinc.emoa.jt.fileProvider"]
+
+            buildConfigField "String"   , "APP_PROVIDER" , '"com.ecinc.emoa.jt.fileProvider"'
+        }
+
+        cz_rsj {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ecinc.emoa.czrsj"]
+            applicationId "com.ecinc.emoa.czrsj"
+            resValue "string", "app_name", "移动办公"
+            resValue "bool", "isrRank", 'true'
+            manifestPlaceholders = [ENVIRONMENT: "cz_rsj",
+                                    app_icon   : "@mipmap/ic_logo_czrsj",
+                                    app_name   : "移动办公",
+                                    APP_PROVIDER   : "com.ecinc.emoa.czrsj.fileprovider"]
+
+            buildConfigField "String"   , "APP_PROVIDER" , '"com.ecinc.emoa.czrsj.fileprovider"'
+        }
+
+        hy_rsj {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ecinc.emoa.hyrsj"]
+            applicationId "com.ecinc.emoa.hyrsj"
+            resValue "string", "app_name", "河源移动办公"
+            resValue "bool", "isrRank", 'true'
+            manifestPlaceholders = [ENVIRONMENT: "hy_rsj",
+                                    app_icon   : "@mipmap/ic_logo_hyrsj",
+                                    app_name   : "河源移动办公",
+                                    APP_PROVIDER   : "com.ecinc.emoa.hyrsj.fileprovider"]
+
+            buildConfigField "String"   , "APP_PROVIDER" , '"com.ecinc.emoa.hyrsj.fileprovider"'
+        }
+
+        dcgaj {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ecinc.emoa.dcgaj"]
+            applicationId "com.ecinc.emoa.dcgaj"
+            resValue "string", "app_name", "东城公安局"
+            resValue "bool", "isrRank", 'true'
+            manifestPlaceholders = [ENVIRONMENT: "dcgaj",
+                                    app_icon   : "@mipmap/ic_logo_dcgaj",
+                                    app_name   : "东城公安局",
+                                    APP_PROVIDER   : "com.ecinc.emoa.dcgaj.fileprovider"]
+
+            buildConfigField "String"   , "APP_PROVIDER" , '"com.ecinc.emoa.dcgaj.fileprovider"'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
+
+    compile 'com.squareup.okio:okio:1.11.0'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //控件注入框架Butterknife
+    compile "com.jakewharton:butterknife:8.0.1"
+    compile 'com.jakewharton:butterknife:7.0.1'
+    apt "com.jakewharton:butterknife-compiler:8.0.1"
+
+    compile 'com.tamic.novate:novate:1.5.5'
+    //加载框
+    compile 'com.wang.avi:library:2.1.3'
+
+}

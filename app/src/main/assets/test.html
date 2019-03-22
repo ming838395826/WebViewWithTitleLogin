@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width， initial-scale=1，minimum-scale=1.0， maximum-scale=1.0">
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script>
+			(function (doc, win) {
+				var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if(clientWidth>=640){ docEl.style.fontSize = '100px'; }
+					else{ docEl.style.fontSize = 100 * (clientWidth / 640) + 'px'; } };
+					if (!doc.addEventListener) return;
+					win.addEventListener(resizeEvt, recalc, false);
+					doc.addEventListener('DOMContentLoaded', recalc, false); })(document, window);
+
+		</script>
+    <title></title>
+    <style>
+			*{margin:0;padding:0;list-style: none;font-family: 'Microsoft Yahei',Tahoma,Helvetica,Arial,sans-serif;}
+			body{background:#f4f8fb;}
+			.outer{overflow: hidden;width:100%;}
+			.pic{
+				display: block;
+			    margin: 0.6rem auto;
+			    width: 60%;
+			    height: auto;
+			}
+			.choosepic{
+				display: block;
+			    width: 40%;
+			    height: 0.85rem;
+			    background: #8d8d8d;
+			    border-radius: 6px;
+			    margin: 0.1rem auto;
+			    font-size: 0.28rem;
+			    color: #ffffff;
+			    letter-spacing: -0.19px;
+			    text-align: center;
+			    border: none;
+			    background: none;
+			    color: #979797;
+			    border: 1px solid #979797;
+			}
+			.word{
+				text-align: center;
+				font-size: 0.3rem;
+			    color: black;
+			    letter-spacing: -0.19px;
+			    margin: 0.1rem auto;
+			}
+			.sure{
+				display: block;
+			    width: 65%;
+			    height: 0.85rem;
+			    background: #f46;
+			    border-radius: 6px;
+			    margin: 1.0rem auto;
+			    font-size: 0.28rem;
+			    color: #ffffff;
+			    letter-spacing: -0.19px;
+			    text-align: center;
+			    border: none;
+			}
+		</style>
+</head>
+<body>
+<div class="outer">
+    <img src="img/pic.png" alt="上传图片" class="pic"/>
+    <a href="" class="btn"><button class="choosepic">选择地址</button></a>
+    <!-- <p class="word">您今天已上传照片</p> -->
+    <button class="sure">确认报名</button>
+</div>
+<script type="text/javascript">
+			$(function(){
+				$(".btn").click(function(){
+				    <!--alert("拍照获取的结果：");-->
+					<!--$(this).attr("href","hgj://take/photo");-->
+					<!--native.openPhoto("http://192.168.1.196:8080/mobile/file/upload/upload.action",5);-->
+					<!--native.searchBuildingByTitle("湛江");-->
+					<!--native.setWeakLock(false);-->
+					alert("拍照获取的结果："+native.getImie()+native.getPhoneModel());
+				})
+			});
+			function uploadResult(result){//接受客户端传过来的图片url
+				// $(".pic").attr("src",imgUrl)
+				alert("拍照获取的结果："+result);
+			}
+			function searchAddressResult(result){//接受客户端传过来的图片url
+				// $(".pic").attr("src",imgUrl)
+				alert("拍照获取的结果："+result);
+			}
+			function returnVersionName(result){//接受客户端传过来的图片url
+				// $(".pic").attr("src",imgUrl)
+				alert("拍照获取的结果："+result);
+			}
+		</script>
+</body>
+</html>

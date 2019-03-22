@@ -1,0 +1,56 @@
+<resources>
+    <!-- 默认的Activity内容物间距 -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="bar_padding_top">10dp</dimen>
+    <dimen name="bar_padding_bottom">10dp</dimen>
+
+    <!-- 通用头像图片 -->
+
+    <!-- 标题栏 -->
+    <!-- 标题间距 -->
+    <!-- 标题栏的内容物间距 -->
+    <dimen name="toolbar_title_image_width">0dp</dimen>
+
+    <!-- 底部栏图标 -->
+
+
+    <!-- 文字大小 -->
+    <dimen name="text_size_title">16sp</dimen>
+
+    <!-- 通用文字 -->
+    <dimen name="text_size_hint">10sp</dimen>
+    <dimen name="text_size_normal">12sp</dimen> <!-- 常规 -->
+    <dimen name="text_size_important">14sp</dimen> <!-- 重要 -->
+    <dimen name="text_size_more_important">16sp</dimen> <!-- 重要 -->
+
+    <!-- 可以在代码中获取到这些值，而不用在不同的单位间转来转去 -->
+    <dimen name="sp_16">16sp</dimen>
+
+    <dimen name="dp_0">0dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_25">24dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_240">240dp</dimen>
+    <dimen name="dp_278">278dp</dimen>
+    <dimen name="dp_300">300dp</dimen>
+
+
+    <dimen name="nav_title_text_size">20sp</dimen>
+</resources>
