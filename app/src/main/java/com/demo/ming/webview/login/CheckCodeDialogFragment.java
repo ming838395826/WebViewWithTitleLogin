@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -112,6 +113,17 @@ public class CheckCodeDialogFragment extends DialogFragment {
                 dismiss();
                 break;
             case R.id.btn_pos:
+                if (TextUtils.isEmpty(mEtCode.getText())) {
+                    new AlertDialog(getActivity()).builder()
+                            .setMsg("请输入验证码")
+                            .setNegativeButton("确定", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }).show();
+                    return;
+                }
                 mLoadingDialog.show();
                 TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Activity.TELEPHONY_SERVICE);
                 Map<String,Object> parameters=new HashMap<>();
