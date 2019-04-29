@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.List;
 import java.util.Locale;
+import java.util.logging.Logger;
 
 /**
  * Created by Administrator on 2018/2/26.
@@ -148,8 +149,9 @@ public class OpenFileUtils {
              * 7.0 调用系统相机拍照不再允许使用Uri方式，应该替换为FileProvider
              * 并且这样可以解决MIUI系统上拍照返回size为0的情况
              */
+            TLog.e("应用程序名",BuildConfig.APPLICATION_ID);
             uri = FileProvider.getUriForFile(MyApplication.instanse.getBaseContext(),
-                    BuildConfig.APPLICATION_ID + ".fileProvider",
+                    BuildConfig.APPLICATION_ID + ".provider",
                     new File(filePath));
         }
         if (!TextUtils.isEmpty(mimeType)) {
